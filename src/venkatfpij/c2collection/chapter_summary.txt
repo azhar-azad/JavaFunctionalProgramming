@@ -1,0 +1,10 @@
+- Collections are commonplace in programming and, thanks to lambda
+expressions, using them is now much easier and simpler in Java.
+- We can trade the long-winded old methods for elegant, concise code
+to perform the common operations on collections.
+- Internal iterators make it convenient to traverse collections,
+transform collections without enduring mutability, and select elements
+from collections without much effort.
+- Using these functions means less code to write.
+- That can lead to more maintainable code, more code that does useful
+domain - or application-related logic, and less code to handle the basics of coding.
