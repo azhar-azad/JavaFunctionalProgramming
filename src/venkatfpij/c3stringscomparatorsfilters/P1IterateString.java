@@ -29,7 +29,19 @@ public class P1IterateString {
                 .forEach(System.out::println);
 
         /*
-
+        About Method Reference
+        Method References can be applicable to both instance methods and static methods. They look
+        the same structurally.
+        If it's an instance method, then the synthesized method's parameter becomes the call's target,
+        like in parameter.toUpperCase(); [An exception is System.out::println()].
+        If it's an static method, then the parameter to the synthesized method is routed as an
+        argument to this method, like in Character.isDigit(parameter) or P1IterateString.printChar(parameter).
+        There is an caveat - method collisions and the resulting ambiguity. If there's both a matching
+        instance method and a static method, we'll get a compilation error due to the reference's ambiguity.
+        For example, if we write Double::toString to convert an instance of Double to String, the compiler
+        would get confused whether to use the 'public String toString()' instance method or the static
+        method 'public static String toString(double value)', both from the Double class.
+        If we run into this, we simply switch back to using the appropriate lambda-expression version to move on.
          */
     }
 
