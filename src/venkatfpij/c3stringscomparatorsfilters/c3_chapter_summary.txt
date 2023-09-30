@@ -1,0 +1,6 @@
+- The regular tasks of working with strings and files and creating custom comparators
+got a lot easier and more concise with lambda expressions and method references.
+- Anonymous inner classes morphed into an elegant style and, along the way,
+mutability dispappeared like the fog in the modern sun.
+- As a bonus for favouring this style, we can benefit from the new JDK facilities
+to iterate efficiently over large directories.
