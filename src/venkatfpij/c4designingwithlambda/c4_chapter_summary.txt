@@ -1,0 +1,11 @@
+- Lambda expressions are not just a language feature; they turn into a very
+powerful yet lightweight design tool.
+- Instead of spending the effort to create a hierarchy of interfaces and classes,
+we can reduce functional interfaces and pass around lambda expressions and method
+references where possible.
+- This technique can help us easily create delegates to quickly implement the
+strategy pattern at both the method and class level.
+- We can also use the lambda expressions into controlled workhorses, we can create
+easy-to-read, fluent interfaces as well as configuration details in code.
+- We must take extra care, however, to properly deal with exceptions when working
+with lambda expressions.
