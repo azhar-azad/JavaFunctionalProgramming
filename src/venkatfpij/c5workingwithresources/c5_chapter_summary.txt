@@ -1,0 +1,9 @@
+- We can't totally rely on automatic garbage collection, especially when our applications
+use external resources.
+- The 'execute around method' pattern can help us gain finer control over the flow of
+execution, and release external resources.
+- Lambda expressions are a good fit to implement this pattern. In addition to controlling
+the object lifetime, we can use this pattern to better manage locks and to write concise
+exception tests.
+- This can lead to more deterministic execution of code, timely cleanup of heavyweight
+resources, and fewer errors.
