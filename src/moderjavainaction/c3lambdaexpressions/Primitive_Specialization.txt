@@ -1,0 +1,36 @@
+Primitive Specialization
+    - We described three functional interfaces that are generic: Predicate<T>, Consumer<T>, and Function<T, R>. There
+    are also functional interfaces that are specialized with certain types.
+    - To refresh a little: every Java type is either a reference type (Byte, Integer, Object, List) or a primitive
+    type (int, double, byte, char). But generic parameters (for example, T in Consumer<T>) can be bound only to
+    reference types. This is due to how generics are internally implemented in Java.
+    - As a result, in Java there's a mechanism to convert a primitive type into a corresponding reference type. This
+    mechanism is called boxing. The opposite approach (converting a reference type into a corresponding primitive type)
+    is called unboxing.
+    - Java also has an autoboxing mechanism to facilitate the task for programmers: boxing an unboxing operations are
+    done automatically. For example this is why the following code is valid (an int gets boxed to an Integer):
+
+        List<Integer> list = new ArrayList<>();
+        for (int i = 300; i < 400; i++) {
+            list.add(i);
+        }
+
+    - But this comes with a performance cost. Boxed values are a wrapper around primitive types and are stored on the
+    heap. Therefore, boxed values use more memory and require additional memory lookups to fetch the wrapped primitive
+    value.
+    - Java 8 also added a specialized version of the functional interfaces in order to avoid autoboxing operations when
+    the inputs or outputs are primitives. For example, in the following code, using an IntPredicate avoids a boxing
+    operation of the value 1000, whereas using a Predicate<Integer> would box the argument 1000 to an Integer object:
+
+        public interface IntPredicate {
+            boolean test(int t);
+        }
+        IntPredicate evenNumbers = (int i) -> i % 2 == 0;
+        evenNumbers.test(1000); // no-boxing
+        Predicate<Integer> oddNumbers = (int i) -> i % 2 != 0;
+        oddNumbers.test(1000); // boxing
+
+    - In general, the appropriate primitive type precedes the names of functional interfaces that have a specialization
+    for the input type parameter (for example, DoublePredicate, IntConsumer, LongBinaryOperator, IntFunction, and so on).
+    - The Function interface also has variants for the output type parameter: ToIntFunction<T>, IntToDoubleFunction, and
+    so on. 
