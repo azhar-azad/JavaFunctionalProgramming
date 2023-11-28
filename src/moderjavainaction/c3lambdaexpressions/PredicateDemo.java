@@ -35,7 +35,7 @@ public class PredicateDemo {
         List<String> nonEmpty = filter(listOfStrings, nonEmptyStrings);
         List<String> empty = filter(listOfStrings, emptyStrings);
 
-        Utils.printList(nonEmpty, true);
-        Utils.printList(empty, true);
+        Utils.printListSingleLine(nonEmpty);
+        Utils.printListSingleLine(empty);
     }
 }

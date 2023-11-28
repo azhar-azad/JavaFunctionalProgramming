@@ -31,6 +31,6 @@ public class FunctionDemo {
                 Arrays.asList("Lambdas", "in", "Action"),
                 (String s) -> s.length()
         );
-        Utils.printList(intList, true);
+        Utils.printListSingleLine(intList);
     }
 }

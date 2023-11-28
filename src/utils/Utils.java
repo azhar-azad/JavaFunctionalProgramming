@@ -5,19 +5,27 @@ import java.util.List;
 public class Utils {
 
     /**
-     * Prints a list of type T
+     * Prints a list of type T in one line separated by comma
      * @param list A list of type T
-     * @param inOneLine A boolean to indicate printing of each item on new line or every item on one line separated by space.
      * @param <T> The reference type of the list.
      */
-    public static <T> void printList(List<T> list, boolean inOneLine) {
+    public static <T> void printListSingleLine(List<T> list) {
         System.out.println("Printing list ...");
-        if (inOneLine) {
-            list.forEach(t -> System.out.print(t + " "));
-            System.out.println();
-        } else {
-            list.forEach(System.out::println);
-        }
-        System.out.println("Printing done.");
+        StringBuilder sb = new StringBuilder();
+        list.forEach(t -> sb.append(t).append(", "));
+        sb.delete(sb.length()-2, sb.length()-1);
+        System.out.print(sb);
+        System.out.println("\nPrinting done.\n");
+    }
+
+    /**
+     * Prints a list of type T (each item on a new line)
+     * @param list A list of type T
+     * @param <T> The reference type of the list.
+     */
+    public static <T> void printList(List<T> list) {
+        System.out.println("Printing list ...");
+        list.forEach(System.out::println);
+        System.out.println("Printing done.\n");
     }
 }
