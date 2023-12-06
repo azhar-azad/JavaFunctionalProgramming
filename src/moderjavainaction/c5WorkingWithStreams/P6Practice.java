@@ -28,12 +28,12 @@ public class P6Practice {
         Trader brian = new Trader("Brian", "Cambridge");
 
         List<Transaction> transactions = Arrays.asList(
-                new Transaction(brian, 2011, 300),
-                new Transaction(raoul, 2012, 1000),
-                new Transaction(raoul, 2011, 400),
-                new Transaction(mario, 2012, 710),
-                new Transaction(mario, 2012, 700),
-                new Transaction(alan, 2012, 950)
+                new Transaction(brian, 2011, 300, "1a"),
+                new Transaction(raoul, 2012, 1000, "a12"),
+                new Transaction(raoul, 2011, 400, "1b"),
+                new Transaction(mario, 2012, 710, "b13"),
+                new Transaction(mario, 2012, 700, "1c"),
+                new Transaction(alan, 2012, 950, "C14")
         );
 
         /*
